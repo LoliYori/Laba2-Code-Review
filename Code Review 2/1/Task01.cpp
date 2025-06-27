@@ -31,15 +31,13 @@ public:
     
     Stack() : top(nullptr) {}
 
-    //  для добавления элемента в стек
     void push(int value) {
-        Node* newNode = new Node(value); // Создаем новый узел
-        newNode->next = top;             // Новый узел указывает на текущую вершину
-        top = newNode;                   // Обновляем вершину стека
+        Node* newNode = new Node(value); 
+        newNode->next = top;           
+        top = newNode;             
         cout << "Элемент " << value << " добавлен в стек." << endl;
     }
 
-    // Метод для удаления элемента из стека
     void pop() {
         if (top == nullptr) {            
             cout << "Стек пуст! Невозможно удалить элемент." << endl;
@@ -76,7 +74,7 @@ public:
         while (top != nullptr) {       
             Node* temp = top;            
             top = top->next;             
-            delete temp;                 // Удаляем узел
+            delete temp;              
         }
         cout << "Стек очищен." << endl;
     }
